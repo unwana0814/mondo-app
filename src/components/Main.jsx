@@ -149,7 +149,7 @@ function Main() {
                   </div>
 
 
-                <div className="card xl:w-[68%] lg:w-[70%] lg:w-[70%]  py-2 lg:py-0 absolute top-[13rem] lg:top-[12rem] left-36 lg:left-32">
+                <div className="card xl:w-[68%] lg:w-[70%] py-2 lg:py-0 absolute top-[13rem] lg:top-[12rem] left-36 lg:left-32">
                     <div className="text-center">
                         <div className='p-3 mt-2 ml-4 rounded-full bg-[#06B3A8] inline-block justify-center'>
                             <AiOutlineCheck className=' text-white text-2xl ' />
@@ -234,7 +234,7 @@ function Main() {
                   </div>
 
 
-                <div className="card xl:w-[68%] lg:w-[70%] lg:w-[70%]  py-2 lg:py-0 absolute top-[13rem] lg:top-[12rem] left-36 lg:left-32">
+                <div className="card xl:w-[68%] lg:w-[70%]  py-2 lg:py-0 absolute top-[13rem] lg:top-[12rem] left-36 lg:left-32">
                     <p className='text-xs md:text-sm font-semibold text-gray-700 pt-4 pb-2'>GBP <span className='text-gray-500'>Account details</span>  </p>
                     <div className="flex justify-between items-center">
                         <p className='text-xs md:text-sm font-semibold text-gray-500 py-1'>Account name</p>
@@ -319,7 +319,7 @@ function Main() {
                   </div>
 
 
-                <div className="card xl:w-[68%] lg:w-[70%] lg:w-[70%]  py-2 lg:py-0 absolute top-[13rem] lg:top-[12rem] left-36 lg:left-32">
+                <div className="card xl:w-[68%] lg:w-[70%]  py-2 lg:py-0 absolute top-[13rem] lg:top-[12rem] left-36 lg:left-32">
                     <div className="text-center">
                         <div className='p-3 mt-2 ml-4 rounded-full bg-[#06B3A8] inline-block justify-center'>
                             <AiOutlineCheck className=' text-white text-2xl ' />
@@ -403,7 +403,7 @@ function Main() {
                   </div>
 
 
-                <div className="card xl:w-[68%] lg:w-[70%] lg:w-[70%]  py-2 lg:py-0 absolute top-[13rem] lg:top-[12rem] left-36 lg:left-32">
+                <div className="card xl:w-[68%] lg:w-[70%]  py-2 lg:py-0 absolute top-[13rem] lg:top-[12rem] left-36 lg:left-32">
                     <p className='text-xs md:text-sm font-semibold text-gray-700 pt-4 pb-2'>GBP <span className='text-gray-500'>Account details</span>  </p>
                     <div className="flex justify-between items-center">
                         <p className='text-xs md:text-sm font-semibold text-gray-500 py-1'>Account name</p>
