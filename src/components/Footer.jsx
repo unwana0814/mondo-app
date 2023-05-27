@@ -1,13 +1,18 @@
 import React from 'react';
 import logo from '../images/Mondo Trans.png';
 import { BsWhatsapp, BsFacebook, BsTwitter, BsInstagram } from 'react-icons/bs';
-import Bounce from 'react-reveal/Bounce';
-
+import { motion, AnimatePresence } from 'framer-motion';
 
 function Footer() {
+    const showElement = true
   return (
-    <Bounce bottom duratio={3000}>
-    <div className='lg:p-20 md:p-12 p-8 bg-teal-950 font-pop'>
+    // <Bounce bottom duratio={3000}>
+    <AnimatePresence>
+        {showElement && (
+    <motion.div className='lg:p-20 md:p-12 p-8 bg-teal-950 font-pop' initial={{ y: '100%' }}
+    animate={{ y: '0%' }}
+    exit={{ y: '100%' }}
+    transition={{ duration: 0.5 }}>
         <div className="flex justify-between sm:flex-wrap flex-col sm:flex-row md:flex-nowrap">
             <div className="mt-3">
                 <h3 className="font-bold text-white text-lg">Products</h3>
@@ -59,8 +64,9 @@ function Footer() {
                 <BsInstagram />
             </div>
         </div>
-    </div>
-    </Bounce>
+    </motion.div>
+     )}
+    </AnimatePresence>
   )
 }
 

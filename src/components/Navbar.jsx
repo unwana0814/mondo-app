@@ -1,13 +1,16 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import logo from '../images/Mondo Logo.png';
 import { Link } from 'react-router-dom';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import {FaBars} from 'react-icons/fa';
+import { motion } from 'framer-motion';
+
 
 function Navbar() {
   return (
-    <div className='container font-pop'>
-        <div className='flex justify-around items-center gap-x-4'>
+    <motion.div className='container font-pop' initial={{ opacity: 0, scale: 0.25 }}
+    animate={{ opacity: 100, scale: 1 }}>
+        <div className='flex justify-around items-center gap-x-4'  >
             {/* Logo */}
                 <img className='lg:w-[10%] w-[30%] md:w-[30%] ' src={logo} alt="Mondo Logo" />
 
@@ -29,7 +32,7 @@ function Navbar() {
             </div>
 
         </div>
-    </div>
+    </motion.div>
   )
 }
 

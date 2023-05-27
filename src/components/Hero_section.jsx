@@ -1,13 +1,12 @@
 import React from 'react';
-import usa from '../images/usa.png';
-import shopify from '../images/shopify.png';
-import udemy from '../images/udemy-logo-5315F166A4-seeklogo.com.png';
+// import usa from '../images/usa.png';
+// import shopify from '../images/shopify.png';
+// import udemy from '../images/udemy-logo-5315F166A4-seeklogo.com.png';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import hero from '../images/Hero Mobile.jpg';
 import { useState, useEffect } from 'react';
 import textChange from './data';
-import Zoom from 'react-reveal/Zoom'
-import Fade from 'react-reveal/Fade'
+import { motion } from "framer-motion";
 
 const Hero_section = () => {
   const[currentState, setCurrentState] = useState(0)
@@ -28,10 +27,14 @@ const Hero_section = () => {
   }
 
   return (
+
     <div className='font-pop w-[90%]'>
+
         <div className="container lg:mt-12 mt-8 grid lg:grid-cols-2 grid-rows md:gap-6 place-items-center">
-          <Zoom right duration={1500}>
-              <div className="col-span-1">
+          {/* <Zoom right duration={1500}> */}
+              <motion.div className="col-span-1" initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.25 }}>
                   <button className='lg:text-xs text-[12px] px-4 py-1 tracking-tight bg-[#06B3A8] rounded-full bg-opacity-25 text-[#06B3A8]'>Mondu's offering</button>
                   <h1 className='md:hidden lg:block text-4xl text-[#06B3A8] mt-6 font-semibold leading-snug'>{textChange[currentState].header}<span className='text-black'> {textChange[currentState].header_one}</span><pre className='font-pop text-black md:hidden block'>{textChange[currentState].header_five}</pre>
                   <pre className='font-pop text-black hidden md:block'>{textChange[currentState].header_two}</pre><pre className='text-black font-pop hidden md:block'>{textChange[currentState].header_three} <br />{textChange[currentState].header_four}</pre></h1>
@@ -45,8 +48,8 @@ const Hero_section = () => {
                     <div className="mt-4 ">
                     <input className='bg-[#06B3A8] bg-opacity-25 p-2 md:py-4 pl-6 md:pl-4 md:pr-20 pr-10 text-sm rounded-2xl' type="type" value="" placeholder='Enter your email address' /> <span className='px-4 py-2 lg:py-3 rounded-full bg-[#06B3A8] -ml-12 text-xs md:text-sm text-white border-2'>Get an account</span>
                   </div>
-              </div>
-              </Zoom>
+              </motion.div>
+              {/* </Zoom> */}
 
               <img className='md:hidden block mt-4' src={hero} alt="" />
 
@@ -117,7 +120,7 @@ const Hero_section = () => {
         </div>
 
          {/* TextSlider */}
-          <Fade>
+
         <div className='flex justify-center items-center gap-1 mt-8'>
           {
              textChange.map((textChange, currentState) => (
@@ -131,7 +134,7 @@ const Hero_section = () => {
             <div className='bg-[#06B3A8] p-[5px] bg-opacity-25 rounded-full mb-4'></div>
             <div className='bg-[#06B3A8] p-[5px] bg-opacity-25 rounded-full mb-4'></div> */}
         </div>
-        </Fade>
+
 
     </div>
   )

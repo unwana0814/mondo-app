@@ -15,20 +15,26 @@ import success from '../images/Payment Succes Mobile.jpg';
 import gbp from '../images/Mobile a.jpg';
 import eur from '../images/Mobile a.png';
 import graph from '../images/Mobile b.png';
-import Slide from 'react-reveal/Slide';
-import LightSpeeed from 'react-reveal/LightSpeed';
-// import {Swiper, SwiperSlide} from 'swiper/react';
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 // import 'swiper/css';
 
 function Main() {
+    const slideFromLeft = true
   return (
     <div className='font-pop'>
         <div className='bg-[#06B3A8] bg-opacity-25 mt-4'>
             <p className='text-center text-sm py-4 md:block hidden'>The trusted way to pay and get paid globally</p>
             <p className='text-center text-sm py-4 md:hidden block'>Join 4,000+ companies already growing</p>
-            <Slide left duration={1500}>
-            <div className='flex justify-center flex-wrap items-center gap-8 pb-8 pt-4'>
+
+
+        <AnimatePresence>
+        {slideFromLeft && (
+            <motion.div className='flex justify-center flex-wrap items-center gap-8 pb-8 pt-4' initial={{ x: '-100%' }}
+            animate={{ x: '0%' }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.5 }}>
                 <div className='flex gap-2 items-align'>
                     <img className='w-10' src={fiat} alt="" />
                     <p className='text-orange-500 font-semibold'>Fiat Republic</p>
@@ -47,8 +53,10 @@ function Main() {
                     <img className='w-12' src={freemarket} alt="" />
                     <p className='text-orange-900 font-semibold'>Freemarket Financial</p>
                 </div>
-            </div>
-            </Slide>
+            </motion.div>
+        )}
+        </AnimatePresence>
+
         </div>
 
         <div className='mt-12 mx-12 sm:mx-20 lg:mx-0'>
@@ -438,8 +446,12 @@ function Main() {
                     <button className='btn2 lg:text-xs text-sm'>Expore the Docs</button>
                 </div>
 
-                <LightSpeeed right duration={1500}>
-                <div className="bg-gray-800 rounded-xl p-6 xl:-ml-40 lg:-ml-28 -ml-8 relative">
+                {/* <LightSpeeed right duration={1500}> */}
+                <motion.div className="bg-gray-800 rounded-xl p-6 xl:-ml-40 lg:-ml-28 -ml-8 relative" variants={{
+                    hidden: {opacity: 0, scale: 0},
+                    visible: {opacity: 0, y: 0}
+                }} initial="hidden" animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.25 }}>
                     <div className="flex items-center md:gap-4 gap-2">
                     <p className='bg-gray-400 rounded-full px-3 py-2 text-xs'>Node.js</p>
                     <p className='text-gray-400 text-xs'>Ruby</p>
@@ -503,8 +515,8 @@ function Main() {
                     <p className='text-xs text-white'>Pay $10,000</p>
                     </div>
                     </div>
-                </div>
-                </LightSpeeed>
+                </motion.div>
+                {/* </LightSpeeed> */}
             </div>
         </div>
 
