@@ -69,7 +69,7 @@ function Main() {
             </div>
 
 
-            <div className='container'>
+            <div className=''>
                 <div className='grid md:grid-cols-3 grid-row my-12 md:gap-x-16 justify-items-center gap-y-8'>
                     <div className='span-col-1 text-center md:max-w-[80%]'>
                         <div className='w-10 p-3 rounded-full bg-[#06B3A8] bg-opacity-25 inline-block justify-center'>
@@ -99,9 +99,9 @@ function Main() {
         </div>
 
         {/* 3rd Section */}
-        <div className="xl:mx-20 lg:mx-12 mx-12 w-[90%]">
+        <div className="xl:mx-20 lg:mx-12 mx-8 w-[90%]">
             <div className="grid lg:grid-cols-2 grid-row lg:gap-x-6 gap-y-6 lg:place-items-center">
-                <div className="col-span-1 w-[90%] lg:w-[95%] lg:order-first order-last">
+                <div className="col-span-1 w-[85%] lg:w-[90%] lg:order-first order-last">
                     <img className='md:hidden block' src={success} alt="" />
                 <div className='bg-[#06B3A8] bg-opacity-25 p-4 rounded-xl relative hidden md:block'>
                 <div className='xl:w-[90%] lg:w-[100%] w-[90%] bg-white rounded-2xl shadow-lg px-8 py-8 '>
@@ -179,14 +179,14 @@ function Main() {
 
         {/* Another segment */}
 
-        <div className="xl:mx-20 lg:mx-12 mx-12 w-[90%] md:mt-8 mt-3 lg:mt-20">
+        <div className="xl:mx-20 lg:mx-12 mx-6 w-[90%] md:mt-8 mt-3 lg:mt-20">
             <div className="grid lg:grid-cols-2 grid-row lg:gap-x-6 gap-y-6 lg:place-items-center">
                 <div className="col-span-1">
                     <h1 className='md:text-4xl text-2xl font-bold my-4'>Global Account</h1>
                     <p className='text-base text-gray-600 leading-loose'>Expand Your Business Globally with One Account for Worldwide Payments - Collect Payments from Customers in Any Country, Currency or Language.</p>
                 </div>
 
-                <div className="col-span-1 w-[90%] lg:w-[95%]">
+                <div className="col-span-1 w-[85%] lg:w-[90%]">
                     <img className='md:hidden block'  src={gbp} alt="" />
                 <div className='bg-[#06B3A8] bg-opacity-25 p-4 rounded-xl relative hidden md:block'>
                 <div className='xl:w-[90%] lg:w-[100%] w-[90%] bg-white rounded-2xl shadow-lg px-8 py-8 '>
@@ -269,12 +269,12 @@ function Main() {
         </div>
 
     {/* Another Segment */}
-    <div className="xl:mx-20 md:mt-8 lg:mt-20 mt-6 lg:mx-12 mx-12 w-[90%]">
+    <div className="xl:mx-20 md:mt-8 lg:mt-20 mt-6 lg:mx-12 mx-8 w-[90%]">
             <div className="grid lg:grid-cols-2 grid-row lg:gap-x-6 gap-y-6 lg:place-items-center">
                 <div className="col-span-1 w-[90%] lg:w-[95%] lg:order-first order-last">
                 <img className='md:hidden block' src={eur} alt="" />
                 <div className='bg-[#06B3A8] bg-opacity-25 p-4 rounded-xl relative hidden md:block'>
-                <div className='xl:w-[90%] lg:w-[100%] w-[90%] bg-white rounded-2xl shadow-lg px-8 py-8 '>
+                <div className='xl:w-[85%] lg:w-[95%] w-[80%] bg-white rounded-2xl shadow-lg px-8 py-8 '>
                     <h1 className='md:text-xl text-xs font-semibold  '>Global Accounts</h1>
                     <p className='md:text-sm text-xs font-semibold text-gray-600 pt-1'>Get paid in up to 25 currencies in 170+ countries </p>
 
@@ -348,7 +348,7 @@ function Main() {
         </div>
 
         {/* Another Segment */}
-        <div className="xl:mx-20 lg:mx-12 mx-12 w-[90%] md:mt-8 mt-3 lg:my-20">
+        <div className="xl:mx-20 lg:mx-12 mx-8 w-[85%] md:mt-8 mt-3 lg:my-20">
             <div className="grid lg:grid-cols-2 grid-row lg:gap-x-6 gap-y-6 lg:place-items-center">
                 <div className="col-span-1">
                     <h1 className='md:text-4xl text-2xl font-bold my-4'>Convert</h1>
@@ -447,7 +447,7 @@ function Main() {
                 </div>
 
                 {/* <LightSpeeed right duration={1500}> */}
-                <motion.div className="bg-gray-800 rounded-xl p-6 xl:-ml-40 lg:-ml-28 -ml-8 relative" variants={{
+                <motion.div className="bg-gray-800 rounded-xl p-6 xl:-ml-40 lg:-ml-28 -ml-6 relative" variants={{
                     hidden: {opacity: 0, scale: 0},
                     visible: {opacity: 0, y: 0}
                 }} initial="hidden" animate={{ opacity: 1, scale: 1 }}
