@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import logo from '../images/Mondo Logo.png';
-import { Link } from 'react-router-dom';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import {FaBars} from 'react-icons/fa';
 import { motion } from 'framer-motion';

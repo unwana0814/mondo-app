@@ -4,7 +4,7 @@ import React from 'react';
 // import udemy from '../images/udemy-logo-5315F166A4-seeklogo.com.png';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import hero from '../images/Hero Mobile.jpg';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import textChange from './data';
 import { motion } from "framer-motion";
 
