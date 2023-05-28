@@ -22,7 +22,7 @@ const Hero_section = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.25 }}>
 
-                  <button className='lg:text-xs text-[12px] px-4 py-1 tracking-tight bg-[#06B3A8] rounded-full bg-opacity-25 text-[#06B3A8]'>Mondu's offering</button>
+                  <button className='lg:text-xs text-[12px] px-4 py-2 tracking-tight bg-[#06B3A8] rounded-full bg-opacity-25 text-[#06B3A8]'>Mondu's offering</button>
                   <h1 className='md:hidden lg:block text-4xl text-[#06B3A8] mt-6 font-semibold leading-snug'>{textChange[currentState].header}<span className='text-black'> {textChange[currentState].header_one}</span><pre className='font-pop text-black md:hidden block'>{textChange[currentState].header_five}</pre>
                   <pre className='font-pop text-black hidden md:block'>{textChange[currentState].header_two}</pre><pre className='text-black font-pop hidden md:block'>{textChange[currentState].header_three} <br />{textChange[currentState].header_four}</pre></h1>
 
@@ -33,7 +33,7 @@ const Hero_section = () => {
                   <h3 className='tracking-widest mt-8 lg:mt-0 text-xl  font-semibold md:text-center lg:text-left'>{textChange[currentState].paragraph2} <pre className='lg:text-[8px] text-sm tracking-tight font-pop'>{textChange[currentState].paragraph3}</pre></h3>
 
                     <div className="mt-4 ">
-                    <input className='bg-[#06B3A8] bg-opacity-25 p-2 md:py-4 pl-6 md:pl-4 md:pr-20 pr-6 text-sm rounded-2xl' type="type" value="" placeholder='Enter your email address' /> <span className='px-4 py-2 lg:py-3 rounded-full bg-[#06B3A8] -ml-12 text-xs md:text-sm text-white border-2'>Get an account</span>
+                    <input className='bg-[#06B3A8] bg-opacity-25 p-2 md:py-4 pl-6 md:pl-4 md:pr-20 pr-4 text-sm rounded-2xl' type="type" value="" placeholder='Enter your email address' /> <span className='px-4 py-2 lg:py-3 rounded-full bg-[#06B3A8] md:-ml-12 -ml-8  text-xs md:text-sm text-white border-2'>Get an account</span>
                   </div>
               </motion.div>
               {/* </Zoom> */}
