@@ -45,7 +45,7 @@ const Hero_section = () => {
              <h3 className='tracking-widest mt-8 lg:mt-0 text-xl  font-semibold md:text-center lg:text-left'>{texts[currentSlide].paragraph2} <pre className='lg:text-[8px] text-sm tracking-tight font-pop'>{texts[currentSlide].paragraph3}</pre></h3>
 
                <div className="mt-4 ">
-               <input className='bg-[#06B3A8] bg-opacity-25 p-2 md:py-4 pl-6 md:pl-4 md:pr-20 pr-4 text-sm rounded-2xl' type="type" value="" placeholder='Enter your email address' /> <span className='px-4 py-2 lg:py-3 rounded-full bg-[#06B3A8] md:-ml-12 -ml-8  text-xs md:text-sm text-white border-2'>Get an account</span>
+               <input className='bg-[#06B3A8] bg-opacity-25 p-2 md:py-4 pl-6 md:pl-4 md:pr-20 pr-4 text-sm rounded-2xl' type="type" placeholder='Enter your email address' /> <span className='px-4 py-2 lg:py-3 rounded-full bg-[#06B3A8] md:-ml-12 -ml-8  text-xs md:text-sm text-white border-2'>Get an account</span>
              </div>
          </motion.div>
           {/* ))} */}
