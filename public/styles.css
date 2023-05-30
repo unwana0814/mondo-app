@@ -1,0 +1,15 @@
+.slideInFromRight {
+    animation-name: slideInFromRight;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    visibility: visible !important;
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

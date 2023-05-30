@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import fiat from '../images/fiat republic.png';
 import clearjunction from '../images/Clear Junction Limited - png.png';
 import providusbank from '../images/path7.png';
@@ -16,6 +16,13 @@ import gbp from '../images/Mobile a.jpg';
 import eur from '../images/Mobile a.png';
 import graph from '../images/Mobile b.png';
 import { motion, AnimatePresence } from 'framer-motion';
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.min.css';
+// import './components/navigation/navigation.min.css';
+// import './components/pagination/pagination.min.css';
+
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 
 // import 'swiper/css';
@@ -29,33 +36,47 @@ function Main() {
             <p className='text-center text-sm py-4 md:hidden block'>Join 4,000+ companies already growing</p>
 
 
-        <AnimatePresence>
-        {slideFromLeft && (
-            <motion.div className='flex justify-center flex-wrap items-center gap-8 pb-8 pt-4' initial={{ x: '-100%' }}
-            animate={{ x: '0%' }}
-            exit={{ x: '100%' }}
-            transition={{ duration: 0.5 }}>
+        {/* <AnimatePresence> */}
+        {/* {slideFromLeft && ( */}
+            <div className='flex justify-center flex-wrap items-center md:gap-8 gap-3  pb-8 pt-4'>
+                <Swiper
+                slidesPerView={3}
+                navigation
+                pagination={{ clickable: false }}
+                autoplay={{ delay: 1000 }}
+                >
+                <SwiperSlide>
                 <div className='flex gap-2 items-align'>
                     <img className='w-10' src={fiat} alt="" />
                     <p className='text-orange-500 font-semibold'>Fiat Republic</p>
                 </div>
-                {/* <div> */}
+                </SwiperSlide>
+                <SwiperSlide>
+                <div>
                     <img className='w-36' src={clearjunction} alt="" />
-                {/* </div> */}
+                </div>
+                </SwiperSlide>
+                <SwiperSlide>
                 <div className='flex items-center gap-1'>
                     <img className='w-8' src={providusbank} alt="" />
                     <p className='uppercase text-sm text-gray-800'>Providusbank</p>
                 </div>
-                {/* <div> */}
+                </SwiperSlide>
+                <SwiperSlide>
+                <div>
                     <img className='w-16' src={circle} alt="" />
-                {/* </div> */}
+                </div>
+                </SwiperSlide>
+                <SwiperSlide>
                 <div className='flex'>
                     <img className='w-12' src={freemarket} alt="" />
                     <p className='text-orange-900 font-semibold'>Freemarket Financial</p>
                 </div>
-            </motion.div>
-        )}
-        </AnimatePresence>
+                </SwiperSlide>
+                </Swiper>
+            </div>
+        {/* )} */}
+        {/* </AnimatePresence> */}
 
         </div>
 

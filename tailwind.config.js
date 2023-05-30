@@ -12,8 +12,8 @@ module.exports = {
       keyframes:
       {
         'trans-right': {
-          '0% , 100%' : {transform: 'translateX(100%)'},
-          '100%': {transform: 'translateX(0)'}
+          '0% , 100%' : {transform: 'translateX(-100%)'},
+          '50%' : {transform: 'translateX(0)'},
         },
 
         'trans-left': {
@@ -54,7 +54,8 @@ module.exports = {
 
       animation: {
         'trans-right' : 'trans-right 3s ease-in-out infinite',
-        'trans-left' : 'trans-left 3s ease-in-out infinite',
+        'trans-left-in' : 'trans-left 3s ease-in-out infinite',
+        'trans-left-out' : 'trans-left 3s ease-in-out visible infinite',
         'trans-top' : 'trans-top 1.5s ease-in-out',
         'trans-bottom' : 'trans-bottom 1.5s ease-in-out',
         'left' : 'right 1.5s ease-in-out',
@@ -62,6 +63,7 @@ module.exports = {
         'scroll': 'scroll 40s linear infinite',
         'scroll-in': 'scroll-in 40s linear infinite',
       },
+
     },
   },
 

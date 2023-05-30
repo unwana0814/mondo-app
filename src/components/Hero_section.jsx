@@ -1,42 +1,54 @@
 import React from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import hero from '../images/Hero Mobile.jpg';
-import { useState} from 'react';
-import textChange from './data';
+import { useState, useEffect} from 'react';
+import texts from './data';
 import { motion } from "framer-motion";
 
 const Hero_section = () => {
-  const[currentState, setCurrentState] = useState(0)
 
-  const goToNext = (currentState)=> {
-    setCurrentState(currentState)
-  }
+  const delay = 3000;
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    // Function to handle the automatic slide transition
+    const nextSlide = () => {
+      setCurrentSlide((prevSlide) => (prevSlide === texts.length - 1 ? 0 : prevSlide + 1));
+    };
+
+    // Set the timeout interval for slide transition
+    const interval = setInterval(nextSlide, delay);
+
+    // Clean up the interval on component unmount
+    return () => {
+      clearInterval(interval);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once on component mount
 
   return (
 
     <div className='font-pop w-[90%]'>
 
         <div className="container lg:mt-12 mt-8 grid lg:grid-cols-2 grid-rows md:gap-6 place-items-center">
-          {/* <Zoom right duration={1500}> */}
-              <motion.div className="col-span-1" initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.25 }}>
+          {/* {texts.map((slide) => ( */}
+               <motion.div className="col-span-1" initial={{ opacity: 0, scale: 0.5 }}
+               animate={{ opacity: 1, scale: 1 }}
+               transition={{ duration: 0.5, delay: 0.25 }}>
+             <button className='lg:text-xs text-[12px] px-4 py-2 tracking-tight bg-[#06B3A8] rounded-full bg-opacity-25 text-[#06B3A8]'>Mondu's offering</button>
+             <h1 className='md:hidden lg:block text-4xl text-[#06B3A8] mt-6 font-semibold leading-snug'>{texts[currentSlide].header}<span className='text-black'> {texts[currentSlide].header_one}</span><pre className='font-pop text-black md:hidden block'>{texts[currentSlide].header_five}</pre>
+             <pre className='font-pop text-black hidden md:block'>{texts[currentSlide].header_two}</pre><pre className='text-black font-pop hidden md:block'>{texts[currentSlide].header_three} <br />{texts[currentSlide].header_four}</pre></h1>
 
-                  <button className='lg:text-xs text-[12px] px-4 py-2 tracking-tight bg-[#06B3A8] rounded-full bg-opacity-25 text-[#06B3A8]'>Mondu's offering</button>
-                  <h1 className='md:hidden lg:block text-4xl text-[#06B3A8] mt-6 font-semibold leading-snug'>{textChange[currentState].header}<span className='text-black'> {textChange[currentState].header_one}</span><pre className='font-pop text-black md:hidden block'>{textChange[currentState].header_five}</pre>
-                  <pre className='font-pop text-black hidden md:block'>{textChange[currentState].header_two}</pre><pre className='text-black font-pop hidden md:block'>{textChange[currentState].header_three} <br />{textChange[currentState].header_four}</pre></h1>
+             {/* Medium */}
+             <h1 className='text-center md:block hidden lg:hidden text-5xl text-[#06B3A8] mt-6 font-semibold leading-tight'>{texts[currentSlide].header} <span className='text-black'>{texts[currentSlide].header_two}  <br/>{texts[currentSlide].header_six}</span> </h1>
 
-                  {/* Medium */}
-                  <h1 className='text-center md:block hidden lg:hidden text-5xl text-[#06B3A8] mt-6 font-semibold leading-tight'>{textChange[currentState].header} <span className='text-black'>{textChange[currentState].header_two}  <br/>{textChange[currentState].header_six}</span> </h1>
+             <p className='leading-loose text-sm my-4 md:text-base lg:text-sm md:text-center lg:text-left'>{texts[currentSlide].paragraph}</p>
+             <h3 className='tracking-widest mt-8 lg:mt-0 text-xl  font-semibold md:text-center lg:text-left'>{texts[currentSlide].paragraph2} <pre className='lg:text-[8px] text-sm tracking-tight font-pop'>{texts[currentSlide].paragraph3}</pre></h3>
 
-                  <p className='leading-loose text-sm my-4 md:text-base lg:text-sm md:text-center lg:text-left'>{textChange[currentState].paragraph}</p>
-                  <h3 className='tracking-widest mt-8 lg:mt-0 text-xl  font-semibold md:text-center lg:text-left'>{textChange[currentState].paragraph2} <pre className='lg:text-[8px] text-sm tracking-tight font-pop'>{textChange[currentState].paragraph3}</pre></h3>
-
-                    <div className="mt-4 ">
-                    <input className='bg-[#06B3A8] bg-opacity-25 p-2 md:py-4 pl-6 md:pl-4 md:pr-20 pr-4 text-sm rounded-2xl' type="type" value="" placeholder='Enter your email address' /> <span className='px-4 py-2 lg:py-3 rounded-full bg-[#06B3A8] md:-ml-12 -ml-8  text-xs md:text-sm text-white border-2'>Get an account</span>
-                  </div>
-              </motion.div>
-              {/* </Zoom> */}
+               <div className="mt-4 ">
+               <input className='bg-[#06B3A8] bg-opacity-25 p-2 md:py-4 pl-6 md:pl-4 md:pr-20 pr-4 text-sm rounded-2xl' type="type" value="" placeholder='Enter your email address' /> <span className='px-4 py-2 lg:py-3 rounded-full bg-[#06B3A8] md:-ml-12 -ml-8  text-xs md:text-sm text-white border-2'>Get an account</span>
+             </div>
+         </motion.div>
+          {/* ))} */}
 
               <img className='md:hidden block mt-4' src={hero} alt="" />
 
@@ -109,17 +121,9 @@ const Hero_section = () => {
          {/* TextSlider */}
 
         <div className='flex justify-center items-center gap-1 mt-8'>
-          {
-             textChange.map((textChange, currentState) => (
-              <span className='bg-[#06B3A8] p-[5px] bg-opacity-25 rounded-full mb-4 hover:cursor-pointer'  key={currentState} onClick={() => goToNext(currentState)}  ></span>
-              // <span className='bg-[#06B3A8] p-[5px] bg-opacity-25 rounded-full mb-4'></span>
-              // <span className='bg-[#06B3A8] p-[5px] bg-opacity-25 rounded-full mb-4'></span>
-
-             ))
-          }
-            {/* <div className='bg-[#06B3A8] md:w-[4%] w-[6%] h-2 rounded-full mb-4'></div>
+           <div className='bg-[#06B3A8] md:w-[4%] w-[6%] h-2 rounded-full mb-4'></div>
             <div className='bg-[#06B3A8] p-[5px] bg-opacity-25 rounded-full mb-4'></div>
-            <div className='bg-[#06B3A8] p-[5px] bg-opacity-25 rounded-full mb-4'></div> */}
+            <div className='bg-[#06B3A8] p-[5px] bg-opacity-25 rounded-full mb-4'></div>
         </div>
 
 
